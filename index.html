@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Betta Index — Wild Species Catalog</title>
+    <meta
+      name="description"
+      content="A dark, freshwater-inspired index of wild Betta species, with habitat, temperament, and care details."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero__badge">Wild Betta Atlas</div>
+        <h1>Betta Index</h1>
+        <p>
+          A freshwater-focused, dark-mode compendium for wild Betta species including
+          <em>splendens</em>, <em>hendra</em>, <em>macrostoma</em>, and more.
+        </p>
+
+        <div class="hero__controls">
+          <label class="search">
+            <span class="sr-only">Search species</span>
+            <input id="searchInput" type="search" placeholder="Search species, region, or water type..." />
+          </label>
+
+          <div class="chip-row" id="chipRow" role="group" aria-label="Filter by habitat type">
+            <button class="chip is-active" data-filter="all">All</button>
+            <button class="chip" data-filter="blackwater">Blackwater</button>
+            <button class="chip" data-filter="peat-swamp">Peat Swamp</button>
+            <button class="chip" data-filter="slow-stream">Slow Stream</button>
+            <button class="chip" data-filter="rice-paddy">Rice Paddy</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="species-grid" id="speciesGrid" aria-live="polite"></section>
+      </main>
+
+      <dialog id="speciesDialog" class="species-dialog">
+        <article id="dialogContent"></article>
+        <form method="dialog" class="dialog-actions">
+          <button class="btn-close">Close</button>
+        </form>
+      </dialog>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
